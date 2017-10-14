@@ -2,9 +2,9 @@ Rat = function (name) {
   this.name = name
 }
 
-Task.prototype = {
-  poisonFood: function (food) {
-    food.poisoned === true
+Rat.prototype = {
+  touchFood: function (food) {
+    food.absorbPoison()
   }
 }
 
