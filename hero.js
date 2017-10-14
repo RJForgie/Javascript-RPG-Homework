@@ -27,6 +27,15 @@ Hero.prototype = {
       return a.difficulty - b.difficulty;
     })
     this.taskLog.reverse()
+  },
+
+  orderTasksByUrgency: function () {
+    console.log(this.taskLog)
+    this.taskLog.sort(function(a, b) {
+      return a.urgency - b.urgency;
+    })
+    this.taskLog.reverse()
+    console.log(this.taskLog)
   }
 
 }

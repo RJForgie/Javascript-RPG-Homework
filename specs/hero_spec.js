@@ -62,5 +62,13 @@ describe("Hero", function () {
     assert.deepEqual(hero1.taskLog, [task1, task2, task3])
   })
 
+  it("should be able to order tasks by urgency", function () {
+    hero1.acceptTask(task3)
+    hero1.acceptTask(task1)
+    hero1.acceptTask(task2)
+    hero1.orderTasksByUrgency()
+    assert.deepEqual(hero1.taskLog, [task1, task2, task3])
+  })
+
 
 })
