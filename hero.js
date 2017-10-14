@@ -43,13 +43,26 @@ Hero.prototype = {
     this.taskLog.reverse()
   },
 
+  // sortTasks: function (variableToSortBy) {
+  //   this.taskLog.sort(function(a, b) {
+  //     return a.variableToSortBy - b.variableToSortBy;
+  //   })
+  //   this.taskLog.reverse()
+  // },
+
   finishTask: function (taskCompleted) {
     this.taskLog.forEach(function (task){
       if (task === taskCompleted){
         task.completeTask()
       }
     })
+  },
 
+  showCompletedTasks: function () {
+    var foundCompletedTasks = this.taskLog.filter(function (task){
+      return task.completed === true;
+    })
+    return foundCompletedTasks;
   }
 
 
