@@ -10,13 +10,25 @@ Hero.prototype = {
     return "Hello, my name is " + this.name + ". You killed my father, prepare to die!"
   },
 
-  eat: function (foodToEat){
+  eat: function (foodToEat) {
     if (foodToEat.type !== this.favouriteFood) {
       this.health += foodToEat.replenishmentValue
     } else {
       this.health += (1.5 * foodToEat.replenishmentValue)
     }
+  },
+
+  acceptTask: function(task) {
+    this.taskLog.push(task)
+  },
+
+  orderTasksByDifficulty: function () {
+    this.taskLog.sort(function(a, b) {
+      return a.difficulty - b.difficulty;
+    })
+    this.taskLog.reverse()
   }
+
 }
 
 module.exports = Hero
