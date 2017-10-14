@@ -10,8 +10,12 @@ Hero.prototype = {
     return "Hello, my name is " + this.name + ". You killed my father, prepare to die!"
   },
 
-  eat: function (foodToEat) {
-    this.health += foodToEat.replenishmentValue
+  eat: function (foodToEat){
+    if (foodToEat.type !== this.favouriteFood) {
+      this.health += foodToEat.replenishmentValue
+    } else {
+      this.health += (1.5 * foodToEat.replenishmentValue)
+    }
   }
 }
 
