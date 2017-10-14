@@ -5,4 +5,10 @@ Hero = function (name, health, favouriteFood) {
   this.questLog = []
 }
 
+Hero.prototype = {
+  talk: function () {
+    return "Hello, my name is " + this.name + ". You killed my father, prepare to die!"
+  }
+}
+
 module.exports = Hero
