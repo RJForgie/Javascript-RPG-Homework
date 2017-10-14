@@ -21,6 +21,10 @@ describe("Hero", function () {
     assert.strictEqual(hero1.favouriteFood, "cake")
   })
 
+  it("should start with empty task log", function () {
+    assert.strictEqual(hero1.taskLog.length, 0)
+  })
+
   it("should be able to talk", function () {
     assert.strictEqual(hero1.talk(), "Hello, my name is Inigo Montoya. You killed my father, prepare to die!")
   })
