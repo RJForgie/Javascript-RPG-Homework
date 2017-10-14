@@ -30,12 +30,17 @@ Hero.prototype = {
   },
 
   orderTasksByUrgency: function () {
-    console.log(this.taskLog)
     this.taskLog.sort(function(a, b) {
       return a.urgency - b.urgency;
     })
     this.taskLog.reverse()
-    console.log(this.taskLog)
+  },
+
+  orderTasksByReward: function () {
+    this.taskLog.sort(function(a, b) {
+      return a.rewardAmount - b.rewardAmount;
+    })
+    this.taskLog.reverse()
   }
 
 }
