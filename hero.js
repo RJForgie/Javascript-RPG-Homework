@@ -41,7 +41,18 @@ Hero.prototype = {
       return a.rewardAmount - b.rewardAmount;
     })
     this.taskLog.reverse()
+  },
+
+  finishTask: function (taskCompleted) {
+    this.taskLog.forEach(function (task){
+      if (task === taskCompleted){
+        task.completeTask()
+      }
+    })
+
   }
+
+
 
 }
 
