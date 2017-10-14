@@ -63,6 +63,13 @@ Hero.prototype = {
       return task.completed === true;
     })
     return foundCompletedTasks;
+  },
+
+  showTasksStillToDo: function () {
+    var foundTasks = this.taskLog.filter(function (task){
+      return task.completed === false;
+    })
+    return foundTasks;
   }
 
 

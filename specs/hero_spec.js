@@ -93,6 +93,14 @@ describe("Hero", function () {
     assert.deepEqual(hero1.showCompletedTasks(), [task2, task3])
   })
 
+  it("should be able to see tasks that are not completed", function () {
+    hero1.acceptTask(task1)
+    hero1.acceptTask(task2)
+    hero1.acceptTask(task3)
+    hero1.finishTask(task2)
+    assert.deepEqual(hero1.showTasksStillToDo(), [task1, task3])
+  })
+
 
 
   // it("should be able to see completed tasks", function () {
