@@ -1,6 +1,6 @@
-Food = function (type, replenishmentValue) {
+Food = function (type, boost) {
   this.type = type
-  this.replenishmentValue = replenishmentValue
+  this.boost = boost
   this.poisoned = false
 }
 

@@ -1,5 +1,6 @@
 var assert = require("assert")
 var Rat = require("../rat")
+var Food = require("../food")
 
 describe("Rat", function () {
   var rat1

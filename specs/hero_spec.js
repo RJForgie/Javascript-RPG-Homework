@@ -1,5 +1,8 @@
 var assert = require("assert")
 var Hero = require("../hero")
+var Food = require("../food")
+var Task = require("../task")
+var Rat = require("../rat")
 
 describe("Hero", function () {
   var hero1
@@ -8,6 +11,7 @@ describe("Hero", function () {
   var task1
   var task2
   var task3
+  var rat1
 
   beforeEach(function () {
     hero1 = new Hero("Inigo Montoya", 20, "cake")
@@ -16,6 +20,7 @@ describe("Hero", function () {
     task1 = new Task("avenge father", 5, 3, 100)
     task2 = new Task("save Buttercup", 4, 2, 75)
     task3 = new Task("find the Dread Pirate Roberts", 2, 1, 50)
+    rat1 = new Rat("mickey")
   })
 
   it("should have a name", function () {
@@ -101,16 +106,12 @@ describe("Hero", function () {
     assert.deepEqual(hero1.showTasksStillToDo(), [task1, task3])
   })
 
+  it("should lose health if poisoned food is eaten", function () {
+    rat1.touchFood(food1)
+    hero1.eat(food1)
+    assert.strictEqual(hero1.health, 15)
+  })
 
-
-  // it("should be able to see completed tasks", function () {
-  //   hero1.acceptTask(task3)
-  //   hero1.acceptTask(task1)
-  //   hero1.acceptTask(task2)
-  //
-  //   hero1.orderTasksByReward()
-  //   assert.deepEqual(hero1.taskLog, [task1, task2, task3])
-  // })
 
 
 })

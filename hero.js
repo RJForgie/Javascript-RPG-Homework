@@ -10,14 +10,15 @@ Hero.prototype = {
     return "Hello, my name is " + this.name + ". You killed my father, prepare to die!"
   },
 
-  eat: function (foodToEat) {
-    if (foodToEat.type !== this.favouriteFood) {
-      this.health += foodToEat.replenishmentValue
-    } else {
-      this.health += (1.5 * foodToEat.replenishmentValue)
-    }
+  eat: function (food) {
+    if (food.poisoned) return this.sufferFromPoisoning(food)
+    food.type !== this.favouriteFood ? this.health += food.boost : this.health += (1.5 * food.boost)
   },
 
+  sufferFromPoisoning: function (poisonedFood) {
+    this.health -= poisonedFood.boost
+  },
+  
   acceptTask: function(task) {
     this.taskLog.push(task)
   },
@@ -42,13 +43,6 @@ Hero.prototype = {
     })
     this.taskLog.reverse()
   },
-
-  // sortTasks: function (variableToSortBy) {
-  //   this.taskLog.sort(function(a, b) {
-  //     return a.variableToSortBy - b.variableToSortBy;
-  //   })
-  //   this.taskLog.reverse()
-  // },
 
   finishTask: function (taskCompleted) {
     this.taskLog.forEach(function (task){

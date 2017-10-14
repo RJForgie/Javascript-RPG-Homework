@@ -12,8 +12,8 @@ describe("Food", function () {
       assert.strictEqual(food1.type, "sandwich")
   })
 
-  it("should have a replenishment value", function () {
-      assert.strictEqual(food1.replenishmentValue, 5)
+  it("should have a boost value", function () {
+      assert.strictEqual(food1.boost, 5)
   })
 
   it("should start as not poisoned", function () {
