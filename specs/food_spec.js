@@ -16,4 +16,13 @@ describe("Food", function () {
       assert.strictEqual(food1.replenishmentValue, 5)
   })
 
+  it("should start as not poisoned", function () {
+      assert.strictEqual(food1.poisoned, false)
+  })
+
+  it("should be able to absorb poison", function () {
+      food1.absorbPoison()
+      assert.strictEqual(food1.poisoned, true)
+  })
+
 })
